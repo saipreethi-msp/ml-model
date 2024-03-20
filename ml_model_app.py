@@ -68,8 +68,7 @@ def data_profiling():
     df = load_dataset()
     if df is not None:
         st.write("### Data Exploration")
-        st.write("#### Sample of Data:")
-        st.write(df.head())
+        st.write(df)
         
         st.write("#### Data Profiling Report:")
         profile = ProfileReport(df, explorative=True)
