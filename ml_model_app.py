@@ -310,7 +310,8 @@ def train_xg_boost(X_train_pd, y_train, task='classification'):
             'gamma': [0, 0.1, 0.2, 0.3, 0.4],
         }
         random_search = RandomizedSearchCV(XGBRegressor(),param_distributions=param_dist, n_iter=100, cv=5, scoring='accuracy', random_state=42)
-        return random_search
+    random_search.fit(X_train_pd, y_train)
+    return random_search
 
 
 
