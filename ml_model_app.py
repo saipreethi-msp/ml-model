@@ -141,7 +141,7 @@ def model_training(df, target_variable, target_type, selected_model):
     
 # Evaluation function
 def evaluate_model(model, X_test, y_test, task_type):
-    st.write("Model Evaluation")
+    st.write(f"Model Evaluation for {model}")
     if isinstance(model, RandomizedSearchCV):
         st.write("Best Hyperparameters:")
         st.write(model.best_params_)
