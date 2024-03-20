@@ -86,7 +86,7 @@ def model_selection(df):
     if df is not None:
         target_variable = select_target_variable(df)
         st.write(f"Selected target variable: {target_variable}")
-
+        st.write(df[target_variable])
         # Allow the user to select the type of the target variable
         target_type = st.radio("Select the type of target variable:", ("Categorical", "Continuous"))
         st.write(f"Target variable type: {target_type}")
