@@ -157,6 +157,7 @@ def evaluate_model(model, X_test, y_test, task_type):
         accuracy = round(accuracy_score(y_test, y_pred), 2)
         precision = round(precision_score(y_test, y_pred, average='micro'), 2)  # Using micro average for multiclass
         recall = round(recall_score(y_test, y_pred, average='micro'), 2)  # Using micro average for multiclass
+        f1score = round(f1_score(y_test, y_pred, average='micro'), 2)
         confusion_mat = confusion_matrix(y_test, y_pred)
         st.write("Confusion Matrix:")
         # Create a heatmap plot for the confusion matrix
@@ -169,6 +170,8 @@ def evaluate_model(model, X_test, y_test, task_type):
         st.write("Accuracy:", accuracy)
         st.write("Precision:", precision)
         st.write("Recall:", recall)
+        st.write("f1 score:", f1_score)
+
         
         # Display classification report
         st.write("Classification Report:")
